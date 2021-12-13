@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/car-rent-db
+    username: test
+    password: test
+
+  jpa:
+    properties:
+      hibernate:
+        ddl: auto
+
+  liquibase:
+    change-log: classpath:db/changelog/master.yml

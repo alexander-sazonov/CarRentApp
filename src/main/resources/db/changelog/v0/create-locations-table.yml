@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-locations-table
+      author: Alexander Sazonov
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            - tableExists:
+                tableName: locations
+      changes:
+        - createTable:
+            tableName: locations
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: UUID
+              - column:
+                  constraints:
+                    nullable: false
+                  name: city
+                  type: VARCHAR(255)

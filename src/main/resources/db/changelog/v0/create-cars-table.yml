@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-cars-table
+      author: Alexander Sazonov
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            - tableExists:
+                tableName: cars
+      changes:
+        - createTable:
+            tableName: cars
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: UUID
+              - column:
+                  constraints:
+                    nullable: false
+                  name: reg_number
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: model
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: seat_capacity
+                  type: INTEGER
+              - column:
+                  constraints:
+                    nullable: false
+                  name: type_transmission
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: year_of_manufacture
+                  type: DATE
+              - column:
+                  constraints:
+                    nullable: false
+                  name: rent_per_day
+                  type: NUMERIC
+              - column:
+                  constraints:
+                    nullable: false
+                  name: available
+                  type: BOOLEAN
+              - column:
+                  constraints:
+                    foreignKeyName: car_location_fk
+                    referencedTableName: locations
+                    referencedColumnNames: id
+                  name: location_id
+                  type: UUID

@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: cars-add-manufacturer-field
+      author: Alexander Sazonov
+      changes:
+        - addColumn:
+            tableName: cars
+            columns:
+              - column:
+                  name: manufacturer
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false

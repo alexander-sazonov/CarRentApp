@@ -1,0 +1,12 @@
+---
+version: '2'
+services:
+  car-rent-db:
+    image: postgres:14
+    hostname: car-rent-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: car-rent-db
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test

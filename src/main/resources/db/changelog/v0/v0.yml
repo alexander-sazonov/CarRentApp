@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include: 
+      file: classpath:db/changelog/v0/create-users-table.yml
+  - include:
+      file: classpath:db/changelog/v0/create-locations-table.yml
+  - include:
+      file: classpath:db/changelog/v0/create-cars-table.yml
+  - include:
+      file: classpath:db/changelog/v0/cars-add-manufacturer-column.yml
+  - include:
+      file: classpath:db/changelog/v0/cars-change-type-year-of-manufacture.yml
+  - include:
+      file: classpath:db/changelog/v0/locations-add-new-columns.yml

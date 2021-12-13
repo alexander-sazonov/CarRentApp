@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: cars-drop-column-year-of-manufacrure
+      author: Alexander Sazonov
+      changes:
+        - dropColumn:
+            columns:
+              - column:
+                  name: year_of_manufacture
+            tableName: cars

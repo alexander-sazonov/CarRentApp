@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: locations-add-new-columns
+      author: Alexander Sazonov
+      changes:
+        - addColumn:
+            tableName: locations
+            columns:
+              - column:
+                  name: country
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(255)
+              - column:
+                  name: phone
+                  type: varchar(255)
